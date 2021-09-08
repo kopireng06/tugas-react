@@ -1,56 +1,41 @@
-import { Component } from "react";
+import { useState } from "react";
 import { AnimatePresence, motion } from 'framer-motion';
 
-class InputList extends Component{
-    constructor(){
-        super();
-        this.state = {
-            inputValue:"",
-            dangerAlert:false //STATUS DANGER ALERT SUDAH DIRENDER ATAU BELUM
-        }
-        this.handleSubmit = this.handleSubmit.bind(this);
-        this.handleChange = this.handleChange.bind(this);
-    }
+const InputList = ({addListTodo})=>{
+    const [inputValue,setInputValue] = useState("");
+    const [dangerAlert,setDangerAlert] = useState(false); //STATUS DANGER ALERT SUDAH DIRENDER ATAU BELUM
 
     //FUNGSI UNTUK MERECORD PERUBAHAN NILAI PADA INPUT
-    handleChange(e){
-        this.setState({
-            inputValue:e.target.value
-        })
+    const handleChange = (e) => {
+        setInputValue(e.target.value);
     }
 
     //FUNGSI UNTUK MENGHANDLE SUBMIT PADA INPUT
-    handleSubmit(e){
+    const handleSubmit = (e) => {
         e.preventDefault();
-        if(this.state.inputValue!=""){
+        if(inputValue!==""){
             //MEMANGGIL FUNGSI addListTodo DARI TodoList Component
-            this.props.addListTodo(this.state.inputValue); 
-            this.setState({
-                dangerAlert:false
-            });
+            addListTodo(inputValue); 
+            setDangerAlert(false);
         }
         else{
-            this.setState({
-                dangerAlert:true
-            });
+            setDangerAlert(true);
         }
     }
 
-    render(){
-        return(
-        <form onSubmit={this.handleSubmit} className="container-sidebar flex flex-col justify-center items-center">
+    return(
+        <form onSubmit={handleSubmit} className="container-sidebar flex flex-col justify-center items-center">
             <h1 className="my-todo-app">MY TODO APP</h1>
-            <input onChange={this.handleChange} type="text" className="input-list" placeholder="isikan nama todo baru"/>
+            <input onChange={handleChange} type="text" className="input-list" placeholder="isikan nama todo baru"/>
             <AnimatePresence>
                 {             
-                this.state.dangerAlert && 
+                dangerAlert && 
                     <motion.p initial={{y:-20,opacity:0}} animate={{y:0,opacity:1}} exit={{y:-40,opacity:0}}
                     className="danger">Mohon isikan nama todo terlebih dahulu</motion.p> 
                 }
             </AnimatePresence>
         </form>
-        )
-    }
+    )
 }
 
 export default InputList;

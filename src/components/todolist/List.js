@@ -1,36 +1,19 @@
-import {Component} from 'react';
 import Trash from '../../foto/trash.png'
 
-class List extends Component {
+const List = ({title,id,completed,handleChangeCheckBox,handleClickTrash})=>{
 
-    constructor(props) {
-      super(props);
-      this.state = {value: this.props.completed};
-      this.handleChangeCheckBox = this.handleChangeCheckBox.bind(this);
-    }
-    
-    //FUNGSI UNTUK MENGUBAH STATUS TODO
-    handleChangeCheckBox () {
-      this.setState({
-        value:!this.state.value
-      });
-    }
-  
-    render(){
-      return(
-          <div className={"list flex flex-wrap "+(this.state.value ? 'finished' : 'not-yet')}>
-            <span className="flex-0">{this.props.title}</span>
-            <div className="flex-1 flex justify-end">
-              {/* MEMAKAI FUNGSI handleClickTrash DARI TodoList Component */}
-              <input onChange={()=>this.handleChangeCheckBox(this.props.id)} className="checkbox" 
-              type="checkbox" defaultChecked={this.state.value} />
-              <img onClick={()=>this.props.handleClickTrash(this.props.id)} src={Trash} 
-              className="trash" alt="trash-icon" />
-            </div>
-          </div>
-  
-      );
-    }
+  return(
+    <div className={"list flex flex-wrap "+(completed ? 'finished' : 'not-yet')}>
+      <span className="flex-0">{title}</span>
+      <div className="flex-1 flex justify-end">
+        {/* MEMAKAI FUNGSI handleClickTrash dan handleChangeChangeBox DARI TodoList Component */}
+        <input onChange={()=>handleChangeCheckBox(id)} className="checkbox" 
+        type="checkbox" defaultChecked={completed} />
+        <img onClick={()=>handleClickTrash(id)} src={Trash} 
+        className="trash" alt="trash-icon" />
+      </div>
+    </div>
+  )
 }
 
 export default List;
