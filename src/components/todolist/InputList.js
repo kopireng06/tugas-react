@@ -6,22 +6,25 @@ class InputList extends Component{
         super();
         this.state = {
             inputValue:"",
-            dangerAlert:false
+            dangerAlert:false //STATUS DANGER ALERT SUDAH DIRENDER ATAU BELUM
         }
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleChange = this.handleChange.bind(this);
     }
 
+    //FUNGSI UNTUK MERECORD PERUBAHAN NILAI PADA INPUT
     handleChange(e){
         this.setState({
             inputValue:e.target.value
         })
     }
 
+    //FUNGSI UNTUK MENGHANDLE SUBMIT PADA INPUT
     handleSubmit(e){
         e.preventDefault();
         if(this.state.inputValue!=""){
-            this.props.addListTodo(this.state.inputValue);
+            //MEMANGGIL FUNGSI addListTodo DARI TodoList Component
+            this.props.addListTodo(this.state.inputValue); 
             this.setState({
                 dangerAlert:false
             });

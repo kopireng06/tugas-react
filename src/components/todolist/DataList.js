@@ -28,16 +28,6 @@ const DataList = [
       id: 6,
       title: "Refactor Code",
       completed: false,
-    },
-    {
-      id: 7,
-      title: "Create API",
-      completed: true,
-    },
-    {
-      id: 8,
-      title: "Test Component",
-      completed: false,
     }
 ]
 

@@ -9,12 +9,13 @@ class TodoList extends Component  {
   constructor(props){
     super(props);
     this.state = {
-      ListTodo:DataList
+      ListTodo:DataList //STATE UNTUK MENYIMPAN TODO
     }
     this.handleClickTrash = this.handleClickTrash.bind(this);
     this.addListTodo = this.addListTodo.bind(this);
   }
 
+  //FUNGSI UNTUK MENGHAPUS TODO
   handleClickTrash(id){
     let index = this.state.ListTodo.findIndex(x=> x.id === id);
     this.setState({
@@ -25,6 +26,7 @@ class TodoList extends Component  {
     })
   }
 
+  //FUNGSI UNTUK MENAMBAH TODO
   addListTodo(nameList){
     let lengthList = this.state.ListTodo.length;
     if(lengthList>1){
@@ -48,9 +50,11 @@ class TodoList extends Component  {
   render(){
     return(
       <div className="w-full container-root">
-        <InputList addListTodo={this.addListTodo}/>
+        {/* MENGIRIM FUNGSI addListTodo ke InputList Component*/}
+        <InputList addListTodo={this.addListTodo}/> 
         <div className="container-todolist">
             <div className="p-10 flex flex-col items-center justify-center w-full">
+              {/* MENGIRIM FUNGSI handleClickTrash ke List Component */}
               {
                   this.state.ListTodo.map(({id,title,completed})=><List key={id} id={id}
                   title={title} completed={completed} handleClickTrash={this.handleClickTrash}/>)
