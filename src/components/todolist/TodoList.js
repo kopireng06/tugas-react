@@ -12,6 +12,7 @@ class TodoList extends Component  {
       ListTodo:DataList //STATE UNTUK MENYIMPAN TODO
     }
     this.handleClickTrash = this.handleClickTrash.bind(this);
+    this.handleChangeCheckBox = this.handleChangeCheckBox.bind(this);
     this.addListTodo = this.addListTodo.bind(this);
   }
 
@@ -24,6 +25,19 @@ class TodoList extends Component  {
         ...this.state.ListTodo.slice(index+1)
      ]
     })
+  }
+
+  handleChangeCheckBox(id){
+    let index = this.state.ListTodo.findIndex(x=> x.id === id);
+    const newTodo = Object.assign({}, this.state.ListTodo[index]);
+    newTodo.completed = !newTodo.completed;
+    this.setState({
+      ListTodo: [
+        ...this.state.ListTodo.slice(0,index),
+        newTodo,
+        ...this.state.ListTodo.slice(index+1)
+      ]
+    });
   }
 
   //FUNGSI UNTUK MENAMBAH TODO
@@ -57,7 +71,8 @@ class TodoList extends Component  {
               {/* MENGIRIM FUNGSI handleClickTrash ke List Component */}
               {
                   this.state.ListTodo.map(({id,title,completed})=><List key={id} id={id}
-                  title={title} completed={completed} handleClickTrash={this.handleClickTrash}/>)
+                  title={title} handleChangeCheckBox={this.handleChangeCheckBox} 
+                  completed={completed} handleClickTrash={this.handleClickTrash}/>)
               }
             </div>
         </div>
