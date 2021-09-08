@@ -44,7 +44,7 @@ class TodoList extends Component  {
   //FUNGSI UNTUK MENAMBAH TODO
   addListTodo(nameList){
     let lengthList = this.state.ListTodo.length;
-    if(lengthList>1){
+    if(lengthList>=1){
       var id = this.state.ListTodo[lengthList-1].id + 1;
     }
     else{
