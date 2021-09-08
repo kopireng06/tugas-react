@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+*{
+    font-family: 'Roboto',serif !important;
+}
+.fw-400{
+    font-weight: 400;
+}
+.fw-500{
+    font-weight: 500;
+}
+.fw-700{
+    font-weight: 700;
+}
+.alterra-color-blue{
+    color: #19345e !important;
+}
+.alterra-color-orange{
+    color: #f47522 !important;
+}
+.bg-alterra-color-orange{
+    background-color: #f47522 !important;
+}
+.red{
+    color: red;
+}
+.bg-form{
+    background:linear-gradient( rgba(25, 52, 94, 0.65), rgba(25, 52, 94, 0.65)),url("charles-rRWiVQzLm7k-unsplash.jpg");
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size: cover;
+    height: 200px;
+}
+.contact-us{
+    font-size: 28px;
+}
+.label-form{
+    font-size: 20px;
+}
+.input-form,textarea{
+    border: 1px solid #ced4da;
+    margin-bottom: 5px;
+    width: 100%;
+}
+::placeholder,option,select,textarea{ 
+    color: #495057;
+    font-weight: 400;
+}
+.form{
+    padding: 50px 30px;
+    position: absolute;
+    top: 180px;
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+}
+.btn-profile{
+    font-size: 16px;
+}
+.container-fluid > div {
+    position: relative;
+}
+@media screen and (min-width: 992px) {
+    .bg-form,form{
+        height: 100vh;
+    }
+    .form{
+        padding: 0 120px;
+        position: static;
+        top: auto;
+        border-top-left-radius: 0px;
+        border-top-right-radius: 0px;
+    }
+    .container-fluid > div {
+        position: static;
+    }
+}

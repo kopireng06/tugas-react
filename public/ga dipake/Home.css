@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+*{
+    font-family: 'Roboto',serif !important;
+}
+.shadow-custom{
+    box-shadow: 0 1px 3px -1px #000;
+}
+.nav-link{
+    font-size: 13px;
+    font-weight: 400;
+}
+.nav-link-active{
+    font-weight: 700;
+}
+.alterra-color-blue{
+    color: #19345e !important;
+}
+.alterra-color-orange{
+    color: #f47522 !important;
+}
+.bg-alterra-color-orange{
+    background-color: #f47522 !important;
+}
+.bg-main{
+    background-image: url('bg-img.png');
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size: cover;
+}
+.bg-orang{
+    background-image: url('matthew-hamilton-tNCH0sKSZbA-unsplash.jpg');
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size: cover;
+    height: 250px;
+    width: 250px;
+}
+.fw-400{
+    font-weight: 400;
+}
+.fw-500{
+    font-weight: 500;
+}
+.fw-700{
+    font-weight: 700;
+}
+.judul-1{
+    margin-top: 20px;
+    font-size: 20px;
+}
+.judul-2{
+    font-size: 50px;
+}
+.judul-3{
+    font-size: 25px;
+}
+.btn-profile{
+    font-size: 16px;
+}
+.project-item{
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size: cover;
+    height: 250px;
+    margin: 0 10px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+@media screen and (min-width: 992px) {
+    .bg-orang {
+        height: 355px;
+        width: 355px;
+    }
+    .judul-1{
+        font-size: 25px;
+        line-height: 29.3px;
+    }
+    .judul-2{
+        font-size: 85px;
+        line-height: 99.61px;
+    }
+    .judul-3{
+        line-height: 41.02px;
+        font-size: 35px;
+    }
+}
