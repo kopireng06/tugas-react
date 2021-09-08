@@ -11,10 +11,10 @@ const TodoList = ()=>{
    //FUNGSI UNTUK MENGHAPUS TODO
    const handleClickTrash = (id) => {
     let index = ListTodo.findIndex(x=> x.id === id);
-    setListTodo([
-      ListTodo.slice(0,index),
-      ListTodo.slice(index+1)
-    ])
+    const newTodo = [...ListTodo];
+    newTodo.splice(index,1);
+    console.log(newTodo);
+    setListTodo(newTodo);
   }
 
   //FUNGSI UNTUK MENGUBAH STATUS TODO
@@ -32,7 +32,7 @@ const TodoList = ()=>{
   //FUNGSI UNTUK MENAMBAH TODO
   const addListTodo = (nameList) => {
     let lengthList = ListTodo.length;
-    if(lengthList>1){
+    if(lengthList>=1){
       var id = ListTodo[lengthList-1].id + 1;
     }
     else{
