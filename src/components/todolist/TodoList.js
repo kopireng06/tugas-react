@@ -27,6 +27,7 @@ class TodoList extends Component  {
     })
   }
 
+  //FUNGSI UNTUK MENGUBAH STATUS TODO
   handleChangeCheckBox(id){
     let index = this.state.ListTodo.findIndex(x=> x.id === id);
     const newTodo = Object.assign({}, this.state.ListTodo[index]);

@@ -6,13 +6,6 @@ class List extends Component {
     constructor(props) {
       super(props);
     }
-    
-    //FUNGSI UNTUK MENGUBAH STATUS TODO
-    // handleChangeCheckBox () {
-    //   this.setState({
-    //     value:!this.state.value
-    //   });
-    // }
 
     render(){
       return(
