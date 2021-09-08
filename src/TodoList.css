@@ -1,0 +1,10 @@
+.list{
+    padding: 10px;
+    border: 1px solid black;
+    display: inline-block;
+    margin-left: 10px;
+    border-radius: 10px;
+}
+.finished{
+    text-decoration: line-through;
+}
