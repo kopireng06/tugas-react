@@ -1,0 +1,6 @@
+langkah menjalankan projek
+
+1. git branch
+2. git switch [nama branch]
+3. npm install
+4. npm start
