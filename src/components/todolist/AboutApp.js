@@ -12,10 +12,10 @@ const AboutApp = () => {
             if(about=="about-app"){
                 return (  
                     <>
-                        <div variants={aboutVariants} animate="animate" initial="initial" exit="exit" className="wrapper-image-about">
+                        <div className="wrapper-image-about">
                             <img src={ssTodo} className="image-about" alt="" />
                         </div>
-                        <div variants={aboutVariants} animate="animate" initial="initial" exit="exit" className="text-about">
+                        <div className="text-about">
                             Aplikasi ini adalah aplikasi todolist yang dibuat dengan reactJS. Pada aplikasi ini user dapat menambah,menghapus
                             serta mengubah status dari todo yang dimilikinya
                         </div>

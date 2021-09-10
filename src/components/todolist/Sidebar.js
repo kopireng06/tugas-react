@@ -37,10 +37,10 @@ const Sidebar = ({addListTodo})=>{
                 </>
             );
         }
-        else if(pathname=="/about-app"){
+        else if(pathname=="/about/about-app"){
             return <h1 className="my-todo-app">ABOUT APP</h1>
         }
-        else if(pathname=="/about-author"){
+        else if(pathname=="/about/about-author"){
             return <h1 className="my-todo-app">ABOUT AUTHOR</h1>
         }
     }
@@ -75,11 +75,11 @@ const ListLink = ({clickedHamburger})=>{
         },
         {
             judul:"ABOUT APP",
-            path:"/about-app"
+            path:"/about/about-app"
         },
         {
             judul:"ABOUT AUTHOR",
-            path:"/about-author"
+            path:"/about/about-author"
         }
     ]
     return(

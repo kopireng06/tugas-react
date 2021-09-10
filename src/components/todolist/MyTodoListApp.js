@@ -4,6 +4,7 @@ import DataList from './DataList'
 import './TodoList.css'
 import TodoList from './TodoList'
 import AboutApp from './AboutApp'
+import Error from './Error'
 import { Route } from 'react-router-dom'
 
 
@@ -32,14 +33,17 @@ const MyTodoListApp = ()=>{
 
   return(
     <div className="w-full container-root">
-      {/* MENGIRIM FUNGSI addListTodo ke InputList Component*/}
+      {/* MENGIRIM FUNGSI addListTodo ke Sidebar Component*/}
       <Sidebar addListTodo={addListTodo}/> 
       <div className="container-todolist">
         <Route exact path="/">
           <TodoList setListTodo={setListTodo} ListTodo={ListTodo}/> 
         </Route>
-        <Route path="/:about">
+        <Route path="/about/:about">
           <AboutApp /> 
+        </Route>
+        <Route path="/:error">
+          <Error /> 
         </Route>
       </div>
     </div>
