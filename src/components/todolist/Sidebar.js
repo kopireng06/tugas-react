@@ -8,6 +8,7 @@ const Sidebar = ({addListTodo})=>{
     const [inputValue,setInputValue] = useState("");
     const [dangerAlertStat,setDangerAlertStat] = useState(false); //STATUS DANGER ALERT SUDAH DIRENDER ATAU BELUM
     const [clickedHamburger,setClickedHamburger] = useState(false);;
+    const {pathname} = useLocation();
 
     //FUNGSI UNTUK MERECORD PERUBAHAN NILAI PADA INPUT
     const handleChange = (e) => {
@@ -27,8 +28,7 @@ const Sidebar = ({addListTodo})=>{
         }
     }
 
-    const RenderIsiSidebar = ()=>{
-        const {pathname} = useLocation();
+    const renderIsiSidebar = ()=>{
         if(pathname=="/"){
             return (
                 <>
@@ -47,7 +47,7 @@ const Sidebar = ({addListTodo})=>{
 
     return(
         <form onSubmit={handleSubmit} className="container-sidebar flex flex-col justify-center items-center">
-            <RenderIsiSidebar/>
+            {renderIsiSidebar()}
             <DangerAlert dangerAlertStat={dangerAlertStat}/>
             <ListLink key="ListLink" clickedHamburger={clickedHamburger}/>    
             <Hamburger clickedHamburger={clickedHamburger} setClickedHamburger={setClickedHamburger}/>
