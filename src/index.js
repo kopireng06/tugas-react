@@ -2,15 +2,18 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter as Router ,Switch,Route} from 'react-router-dom';
 import reportWebVitals from './reportWebVitals';
-import TodoList from './components/todolist/TodoList';
+import MyTodoListApp from './components/todolist/MyTodoListApp';
+import { AnimatePresence } from 'framer-motion';
 
 ReactDOM.render(
   <React.StrictMode>
-    <Router>
-      <Switch>
-        <Route exact path="/" component={TodoList} />
-      </Switch>
-    </Router>
+    <AnimatePresence>
+      <Router>
+        <Switch>
+          <Route path="/" component={MyTodoListApp} />
+        </Switch>
+      </Router>
+    </AnimatePresence>
   </React.StrictMode>,
   document.getElementById('root')
 );

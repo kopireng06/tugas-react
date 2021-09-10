@@ -1,3 +1,6 @@
+li{
+    list-style-type: none;
+}
 .w-full{
     width: 100%;
 }
@@ -34,10 +37,34 @@
     background-position: center;
     background-size: cover;
 }
+.image-about{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    object-fit: cover;
+    top: 0;
+}
+.wrapper-image-about{
+    padding-top: 40%;
+    width: 80%;
+    margin: 20px auto;
+    background: #02c4ff;
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 2px solid white;
+    box-shadow: 2px 10px 43px 3px rgba(255,255,255,0.75);
+}
+.nav-sidebar{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: white;
+}
 .container-todolist{
     width:66.666667%;
     padding: 30px;
-    background: rgb(2, 196, 255)
+    background: #02c4ff;
 }
 .mx-auto{
     margin: 0 auto;
@@ -108,8 +135,8 @@
     font-weight: bold;
     position: absolute;
     align-self: flex-start;
-    top: 0;
-    left: 10px;
+    bottom: 10px;
+    right: 18px;
 }
 .trash{
     height: 24px;
@@ -122,18 +149,64 @@
 .flex-0{
     flex-grow: 0;
 }
+.hamburger{
+    transition: all 0.5s;
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    height: 50px;
+    width: 50px;
+    padding: 10px;
+    border-radius: 50%;
+}
+.bg-white{
+    background: white;
+}
+.bg-blue{
+    background: #02c4ff;
+}
+.hamburger-line{
+    fill: none;
+    stroke: #ffffff;
+    stroke-linecap: round;
+}
+.hamburger-white{
+    stroke: #ffffff;
+}
+.hamburger-blue{
+    stroke:#02c4ff;
+}
+.link-sidebar{
+    text-decoration: none;
+    font-family: cursive;
+    font-weight: bold;
+    font-size: 25px;
+    color: rgb(2, 196, 255);
+    margin: 5px 0;
+}
+.text-about{
+    color: white;
+    font-family: cursive;
+    font-size: 20px;
+    margin-top: 30px;
+}
 @media(max-width:900px){
+    .text-about{
+        font-size: 16px;
+    }
     .container-root{
         flex-direction: column;
         position: relative;
     }
     .container-todolist{
+        background: #02c4ff;
+        min-height: 400px;
         width: 100%;
         position: absolute;
         top: 225px;
         border-top-left-radius: 25px;
         border-top-right-radius: 25px;
-        padding: 20px;
+        padding: 30px 50px;
     }
     .container-sidebar{
         width: 100%;

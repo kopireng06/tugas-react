@@ -1,6 +1,6 @@
 import Trash from '../../foto/trash.png'
 
-const List = ({title,id,completed,handleChangeCheckBox,handleClickTrash})=>{
+const Todo = ({title,id,completed,handleChangeCheckBox,handleClickTrash})=>{
 
   return(
     <div className={"list flex flex-wrap "+(completed ? 'finished' : 'not-yet')}>
@@ -16,4 +16,4 @@ const List = ({title,id,completed,handleChangeCheckBox,handleClickTrash})=>{
   )
 }
 
-export default List;
+export default Todo;
