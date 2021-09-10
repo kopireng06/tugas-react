@@ -5,7 +5,7 @@ import './TodoList.css'
 import TodoList from './TodoList'
 import AboutApp from './AboutApp'
 import Error from './Error'
-import { Route } from 'react-router-dom'
+import { Route,Switch } from 'react-router-dom'
 
 
 const MyTodoListApp = ()=>{
@@ -36,15 +36,17 @@ const MyTodoListApp = ()=>{
       {/* MENGIRIM FUNGSI addListTodo ke Sidebar Component*/}
       <Sidebar addListTodo={addListTodo}/> 
       <div className="container-todolist">
-        <Route exact path="/">
-          <TodoList setListTodo={setListTodo} ListTodo={ListTodo}/> 
-        </Route>
-        <Route path="/about/:about">
-          <AboutApp /> 
-        </Route>
-        <Route path="/:error">
-          <Error /> 
-        </Route>
+        <Switch>
+          <Route exact path="/">
+            <TodoList setListTodo={setListTodo} ListTodo={ListTodo}/> 
+          </Route>
+          <Route path="/about/:about">
+            <AboutApp /> 
+          </Route>
+          <Route path="/:error">
+            <Error /> 
+          </Route>
+        </Switch>
       </div>
     </div>
   )
