@@ -36,6 +36,9 @@ const AboutApp = () => {
                     </>
                 );
             }
+            else{
+                return null
+            }
         })()
     )
 

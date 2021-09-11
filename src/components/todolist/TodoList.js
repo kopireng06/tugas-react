@@ -23,7 +23,7 @@ const TodoList = ({ListTodo,setListTodo}) => {
     }
 
     return (  
-        <div className="p-10 flex flex-col items-center justify-center w-full">
+        <div className="flex flex-col items-center justify-center w-full">
             {/* MENGIRIM FUNGSI handleClickTrash ke List Component */}
             {
                 ListTodo.map(({id,title,completed})=><Todo key={id} id={id}

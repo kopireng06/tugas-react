@@ -4,12 +4,14 @@ import { BrowserRouter as Router ,Switch,Route} from 'react-router-dom';
 import reportWebVitals from './reportWebVitals';
 import MyTodoListApp from './components/todolist/MyTodoListApp';
 import { AnimatePresence } from 'framer-motion';
+import Form from './components/form/Form';
 
 ReactDOM.render(
   <React.StrictMode>
     <AnimatePresence>
       <Router>
         <Switch>
+          <Route exact path="/form" component={Form} />
           <Route path="/" component={MyTodoListApp} />
         </Switch>
       </Router>

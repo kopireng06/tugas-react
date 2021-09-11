@@ -40,7 +40,7 @@ const MyTodoListApp = ()=>{
           <Route exact path="/">
             <TodoList setListTodo={setListTodo} ListTodo={ListTodo}/> 
           </Route>
-          <Route path="/about/:about">
+          <Route exact path="/about/:about">
             <AboutApp /> 
           </Route>
           <Route path="/:error">

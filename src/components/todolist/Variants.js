@@ -59,7 +59,7 @@ export const dangerVariants = {
         opacity:0
     },
     animate:{
-        y:0,
+        y:-20,
         opacity:1
     },
     exit:{

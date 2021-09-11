@@ -1,0 +1,19 @@
+.bg-form{
+    background:linear-gradient( rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)),url("../../foto/foto-sidebar.jpg");
+    background-repeat: no-repeat;
+    background-position: bottom center;
+    background-size: cover;
+}
+.form-pendaftaran{
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    box-shadow: 8px 3px 57px -1px rgba(0,192,204,1);
+}
+@media (max-width:768px){
+    .form-pendaftaran{
+        border-top-left-radius: 20px;
+        border-top-right-radius: 20px;
+        border-bottom-left-radius: 0px;
+        box-shadow: 8px 3px 57px -1px rgba(0,192,204,1);
+    }
+}
