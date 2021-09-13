@@ -1,4 +1,6 @@
 import Todo from './Todo'
+import { motion } from 'framer-motion';
+import { pageVariants } from './Variants';
 
 const TodoList = ({ListTodo,setListTodo}) => {
 
@@ -23,14 +25,15 @@ const TodoList = ({ListTodo,setListTodo}) => {
     }
 
     return (  
-        <div className="flex flex-col items-center justify-center w-full">
+        <motion.div variants={pageVariants} initial="initial" animate="animate" exit="exit"
+        className="flex flex-col items-center justify-center w-full">
             {/* MENGIRIM FUNGSI handleClickTrash ke List Component */}
             {
                 ListTodo.map(({id,title,completed})=><Todo key={id} id={id}
                 title={title} handleChangeCheckBox={handleChangeCheckBox} 
                 completed={completed} handleClickTrash={handleClickTrash}/>)
             }
-        </div>
+        </motion.div>
     );
 }
  

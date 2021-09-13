@@ -38,9 +38,9 @@ export const linkVariants = {
     }
 }
 
-export const aboutVariants = {
+export const pageVariants = {
     initial : {
-        x:-30,
+        x:30,
         opacity:0
     },
     animate:{
@@ -48,7 +48,6 @@ export const aboutVariants = {
         opacity:1
     },
     exit:{
-        x:-30,
         opacity:0
     }
 }

@@ -5,12 +5,16 @@ import './TodoList.css'
 import TodoList from './TodoList'
 import AboutApp from './AboutApp'
 import Error from './Error'
-import { Route,Switch } from 'react-router-dom'
+import { Route,Switch,useLocation } from 'react-router-dom'
+import { AnimatePresence } from 'framer-motion'
 
 
 const MyTodoListApp = ()=>{
 
   const [ListTodo,setListTodo] = useState(DataList);
+  const location = useLocation();
+
+  console.log(location);
 
   //FUNGSI UNTUK MENAMBAH TODO
   const addListTodo = (nameList) => {
@@ -36,17 +40,19 @@ const MyTodoListApp = ()=>{
       {/* MENGIRIM FUNGSI addListTodo ke Sidebar Component*/}
       <Sidebar addListTodo={addListTodo}/> 
       <div className="container-todolist">
-        <Switch>
-          <Route exact path="/">
-            <TodoList setListTodo={setListTodo} ListTodo={ListTodo}/> 
-          </Route>
-          <Route exact path="/about/:about">
-            <AboutApp /> 
-          </Route>
-          <Route path="/:error">
-            <Error /> 
-          </Route>
-        </Switch>
+        <AnimatePresence exitBeforeEnter>
+          <Switch location={location} key={location.key}>
+            <Route exact path="/">
+              <TodoList setListTodo={setListTodo} ListTodo={ListTodo}/> 
+            </Route>
+            <Route exact path="/about/:about">
+              <AboutApp /> 
+            </Route>
+            <Route path="/:error">
+              <Error /> 
+            </Route>
+          </Switch>
+        </AnimatePresence>
       </div>
     </div>
   )
