@@ -6,7 +6,6 @@ const Todo = ({title,id,completed})=>{
 
   const dispatch = useDispatch();
   const ListTodo = useSelector((state)=>state.dataTodo.todo);
-  console.log(id);
   
   const handleClickTrash = (id) => {
     let index = ListTodo.findIndex(todo=> todo.id === id);
