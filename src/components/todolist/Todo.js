@@ -1,15 +1,30 @@
 import Trash from '../../foto/trash.png'
+import { delTodo,changeTodo } from '../app/todoSlice';
+import { useDispatch,useSelector } from 'react-redux';
 
-const Todo = ({title,id,completed,handleChangeCheckBox,handleClickTrash})=>{
+const Todo = ({title,id,completed})=>{
+
+  const dispatch = useDispatch();
+  const ListTodo = useSelector((state)=>state.dataTodo.todo);
+  console.log(id);
+  
+  const handleClickTrash = (id) => {
+    let index = ListTodo.findIndex(todo=> todo.id === id);
+    dispatch(delTodo(index));
+  }
+
+  const handleChangeCheckBox = (id,completed)=> {
+      let index = ListTodo.findIndex(todo=> todo.id === id);
+      dispatch(changeTodo({index,completed}))
+  }
 
   return(
     <div className={"list flex flex-wrap "+(completed ? 'finished' : 'not-yet')}>
       <span className="flex-0">{title}</span>
       <div className="flex-1 flex justify-end">
-        {/* MEMAKAI FUNGSI handleClickTrash dan handleChangeChangeBox DARI TodoList Component */}
-        <input onChange={()=>handleChangeCheckBox(id)} className="checkbox" 
+        <input className="checkbox" onChange={()=>handleChangeCheckBox(id,completed)}
         type="checkbox" defaultChecked={completed} />
-        <img onClick={()=>handleClickTrash(id)} src={Trash} 
+        <img  src={Trash} onClick={()=>handleClickTrash(id)}
         className="trash" alt="trash-icon" />
       </div>
     </div>

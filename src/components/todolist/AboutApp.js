@@ -15,7 +15,7 @@ const AboutApp = () => {
                     <motion.div variants={pageVariants} initial="initial" 
                     animate="animate" exit="exit">
                         <div className="wrapper-image-about">
-                            <img src={ssTodo} className="image-about" alt="" />
+                            <img src={ssTodo} className="image-about" />
                         </div>
                         <div className="text-about">
                             Aplikasi ini adalah aplikasi todolist yang dibuat dengan reactJS. Pada aplikasi ini user dapat menambah,menghapus
@@ -29,7 +29,7 @@ const AboutApp = () => {
                     <motion.div variants={pageVariants} initial="initial" 
                     animate="animate" exit="exit">
                         <div className="wrapper-image-about">
-                            <img src={Me} className="image-about" alt="" />
+                            <img src={Me} className="image-about" />
                         </div>
                         <div className="text-about">
                             Hai, Namaku Naufal Ghani. Aku mahasiswa S1 sistem informasi di Universitas Airlangga. Sekarang aku 

@@ -4,27 +4,33 @@ import { gsap } from "gsap";
 import { Link,useLocation } from "react-router-dom";
 import { sidebarVariants,linkVariants, dangerVariants } from "./Variants";
 
-const Sidebar = ({addListTodo})=>{
+import { useDispatch,useSelector } from "react-redux";
+import { addTodo } from "../app/todoSlice";
+
+const Sidebar = ()=>{
     const [inputValue,setInputValue] = useState("");
-    const [dangerAlertStat,setDangerAlertStat] = useState(false); //STATUS DANGER ALERT SUDAH DIRENDER ATAU BELUM
+    const [dangerAlertStat,setDangerAlertStat] = useState(false);
     const [clickedHamburger,setClickedHamburger] = useState(false);;
     const {pathname} = useLocation();
 
-    //FUNGSI UNTUK MERECORD PERUBAHAN NILAI PADA INPUT
+    const ListTodo = useSelector((state) => state.dataTodo.todo);
+    const lengthTodo = ListTodo.length;
+    const lastID = lengthTodo > 0 ? ListTodo[lengthTodo-1].id+1 : 0;
+
+    const dispatch = useDispatch()
+
     const handleChange = (e) => {
         setInputValue(e.target.value);
     }
 
-    //FUNGSI UNTUK MENGHANDLE SUBMIT PADA INPUT
     const handleSubmit = (e) => {
         e.preventDefault();
-        if(inputValue!==""){
-            //MEMANGGIL FUNGSI addListTodo DARI TodoList Component
-            addListTodo(inputValue); 
-            setDangerAlertStat(false);
+        if(inputValue === ""){
+            setDangerAlertStat(true);
         }
         else{
-            setDangerAlertStat(true);
+            setDangerAlertStat(false);
+            dispatch(addTodo({inputValue,lastID}));
         }
     }
 
