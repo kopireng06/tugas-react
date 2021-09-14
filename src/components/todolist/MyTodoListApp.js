@@ -8,7 +8,7 @@ import Error from './Error'
 import { Route,Switch,useLocation } from 'react-router-dom'
 import { AnimatePresence } from 'framer-motion'
 import { store } from '../app/store'
-import { Provider } from 'react-redux'
+import { Provider} from 'react-redux'
 import { PersistGate } from 'redux-persist/integration/react';
 import { persistStore } from 'redux-persist';
 

@@ -1,4 +1,4 @@
-import { configureStore,getDefaultMiddleware } from "@reduxjs/toolkit";
+import { configureStore } from "@reduxjs/toolkit";
 import storage from 'redux-persist/lib/storage';
 import todoSlice from "./todoSlice";
 import {combineReducers} from "redux"; 
@@ -17,7 +17,8 @@ const persistedReducer = persistReducer(persistConfig, reducers);
 
 export const store = configureStore({
     reducer:persistedReducer,
-    middleware: getDefaultMiddleware({
+    middleware: (getDefaultMiddleware) =>
+        getDefaultMiddleware({
         serializableCheck: false,
     })
 });

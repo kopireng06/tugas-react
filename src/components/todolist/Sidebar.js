@@ -12,7 +12,7 @@ const Sidebar = ()=>{
     const [dangerAlertStat,setDangerAlertStat] = useState(false);
     const [clickedHamburger,setClickedHamburger] = useState(false);;
     const {pathname} = useLocation();
-
+    
     const ListTodo = useSelector((state) => state.dataTodo.todo);
     const lengthTodo = ListTodo.length;
     const lastID = lengthTodo > 0 ? ListTodo[lengthTodo-1].id+1 : 0;
