@@ -1,6 +1,4 @@
-import {useState} from 'react'
 import Sidebar from './Sidebar'
-import DataList from './DataList'
 import './TodoList.css'
 import TodoList from './TodoList'
 import AboutApp from './AboutApp'
