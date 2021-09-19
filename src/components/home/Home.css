@@ -13,6 +13,12 @@
 .nav-link-active{
     font-weight: 700;
 }
+.clock{
+    position: fixed;
+    top: 70px;
+    right: 20px;
+    font-weight: bold;
+}
 .alterra-color-blue{
     color: #19345e !important;
 }

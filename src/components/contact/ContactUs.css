@@ -41,6 +41,9 @@
     margin-bottom: 5px;
     width: 100%;
 }
+.input-form-danger{
+    border: 2px solid red;
+}
 ::placeholder,option,select,textarea{ 
     color: #495057;
     font-weight: 400;
@@ -51,6 +54,10 @@
     top: 180px;
     border-top-left-radius: 25px;
     border-top-right-radius: 25px;
+}
+.danger-text{
+    font-size: 11px;
+    margin: 0;
 }
 .btn-profile{
     font-size: 16px;

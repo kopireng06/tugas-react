@@ -2,20 +2,26 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter as Router ,Switch,Route} from 'react-router-dom';
 import reportWebVitals from './reportWebVitals';
-import MyTodoListApp from './components/todolist/MyTodoListApp';
-import { AnimatePresence } from 'framer-motion';
-import Form from './components/form/Form';
+import Home from './components/home/Home';
+import ContactUs from './components/contact/ContactUs';
+import { Provider } from 'react-redux'
+import { store } from './components/app_contact/store';
+import ReviewMessage from './components/reviewMessage/ReviewMessage';
+import News from './components/news/News';
+
 
 ReactDOM.render(
   <React.StrictMode>
-    <AnimatePresence>
+    <Provider store={store}>
       <Router>
         <Switch>
-          <Route exact path="/form" component={Form} />
-          <Route path="/" component={MyTodoListApp} />
+          <Route exact path="/" component={Home} />
+          <Route path="/contact" component={ContactUs} />
+          <Route path="/review_message" component={ReviewMessage} />
+          <Route path="/news" component={News} />
         </Switch>
       </Router>
-    </AnimatePresence>
+    </Provider>
   </React.StrictMode>,
   document.getElementById('root')
 );
