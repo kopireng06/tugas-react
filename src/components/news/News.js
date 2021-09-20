@@ -7,14 +7,32 @@ import { useReducer,useEffect } from 'react';
 import LoadingNews from './LoadingNews';
 import { initialNewsState,newsReducer } from './newsReducer';
 
+const callApi = async()=>{
+    const response = await fetch(`https://google-news1.p.rapidapi.com/topic-headlines`,{
+        headers: {
+            'x-rapidapi-host': 'google-news1.p.rapidapi.com',
+            'x-rapidapi-key': '51816de504msh4836350ec5e7141p14ffc8jsn614f01e8eefe'
+          }
+    });
+    const {articles} = await response.json();
+    console.log(articles);
+}
+
 const News = () => {
     
     const [newsState, dispatch] = useReducer(newsReducer,initialNewsState)
     const lotLoading = Array(9).fill("");
     const apiKey = "63d6c84aca384450ab49f58c9ebfc937";
 
+    const setting = {
+        headers: {
+            'Access-Control-Allow-Origin': '*',
+            'Access-Control-Allow-Credentials': true
+          }
+    }
+
     const callApiNews = async()=>{
-        const response = await fetch(`https://newsapi.org/v2/everything?q=${newsState.param}&apiKey=${apiKey}`);
+        const response = await fetch(`http://newsapi.org/v2/everything?q=${newsState.param}&apiKey=${apiKey}`);
         const {articles} = await response.json();
         dispatch({type:'get_data_news',dataNews:articles});
         dispatch({type:"change_finished"});
