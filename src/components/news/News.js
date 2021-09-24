@@ -7,16 +7,16 @@ import { useReducer,useEffect } from 'react';
 import LoadingNews from './LoadingNews';
 import { initialNewsState,newsReducer } from './newsReducer';
 
-const callApi = async()=>{
-    const response = await fetch(`https://google-news1.p.rapidapi.com/topic-headlines`,{
-        headers: {
-            'x-rapidapi-host': 'google-news1.p.rapidapi.com',
-            'x-rapidapi-key': '51816de504msh4836350ec5e7141p14ffc8jsn614f01e8eefe'
-          }
-    });
-    const {articles} = await response.json();
-    console.log(articles);
-}
+// const callApi = async()=>{
+//     const response = await fetch(`https://google-news1.p.rapidapi.com/topic-headlines`,{
+//         headers: {
+//             'x-rapidapi-host': 'google-news1.p.rapidapi.com',
+//             'x-rapidapi-key': '51816de504msh4836350ec5e7141p14ffc8jsn614f01e8eefe'
+//           }
+//     });
+//     const {articles} = await response.json();
+//     console.log(articles);
+// }
 
 const News = () => {
     
